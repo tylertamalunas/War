@@ -28,8 +28,8 @@ public class Deck {
                 startingDeck.add(card);
             }
         }
-        System.out.println("Building Deck");
-        System.out.println(startingDeck.toString());
+//        System.out.println("Building Deck");
+//        System.out.println(startingDeck.toString());
     }
 
     // sort the cards in the Deck/Hand into a random order using the Fisher-Yates shuffle algorithm.
@@ -48,8 +48,8 @@ public class Deck {
             deck.set(i, deck.get(index));
             deck.set(index, temp);
         }
-        System.out.println("Shuffling Deck");
-        System.out.println(deck.toString());
+//        System.out.println("Shuffling Deck");
+//        System.out.println(deck.toString());
     }
 
     // only happens at game start, shuffles deck, and splits deck in half to give to players hands
@@ -70,10 +70,14 @@ public class Deck {
             player2Hand.add(startingDeck.get(i));
         }
         System.out.println("Player 1");
-        System.out.println("Deck size " + player1Hand.size());
+        System.out.println("Hand size " + player1Hand.size());
+        System.out.println("Discard size " + player1Discard.size());
         System.out.println(player1Hand.toString());
-        System.out.println("Player 2");
+        System.out.println("\nPlayer 2");
         System.out.println("Deck size " + player2Hand.size());
+        System.out.println("Discard size " + player2Discard.size());
         System.out.println(player2Hand.toString());
     }
+
+    public static void whatNow()
 }
