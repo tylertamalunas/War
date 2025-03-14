@@ -4,27 +4,27 @@ public class Player {
     // two players, each assigned a "Hand" and "Discard" deck
     // when both decks are empty, that player loses
 
-    private Deck hand;
-    private Deck discard;
+    private Hand hand;
+    private DiscardPile discard;
 
-    public Player(Deck hand, Deck discard) {
+    public Player(Hand hand, DiscardPile discard) {
         this.hand = hand;
         this.discard = discard;
     }
 
-    public Deck getHand() {
+    public Hand getHand() {
         return hand;
     }
 
-    public Deck getDiscard() {
+    public DiscardPile getDiscard() {
         return discard;
     }
 
-    public void setHand(Deck hand) {
+    public void setHand(Hand hand) {
         this.hand = hand;
     }
 
-    public void setDiscard(Deck discard) {
+    public void setDiscard(DiscardPile discard) {
         this.discard = discard;
     }
 }
