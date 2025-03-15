@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import static Entities.Card.Rank.ranks;
 import static Entities.Card.Suit.suits;
 
-public class Deck extends CardCollection{
+public class Deck extends CardCollection {
 
     public Deck() {
         super();

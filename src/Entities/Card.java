@@ -6,18 +6,53 @@ public class Card {
     // could potentially add joker for some shennanigans
 
     public enum Suit {
-        HEARTS, DIAMONDS, SPADES, CLUBS;    // values of the enumeration
+        HEARTS(1),
+        DIAMONDS(2),
+        SPADES(3),
+        CLUBS(4);    // values of the enumeration
 
         static final Suit[] suits = Suit.values(); // array filled with all the enumeration values
+        private final int suitValue;
+
+        Suit(int suitValue) {
+            this.suitValue = suitValue;
+        }
+
+        public int getSuitValue() {
+            return suitValue;
+        }
+
         public static Suit getSuit(int i) {
             return Suit.suits[i];
         }
     }
 
     public enum Rank {
-        TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE;
+        TWO(2),
+        THREE(3),
+        FOUR(4),
+        FIVE(5),
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        TEN(10),
+        JACK(11),
+        QUEEN(12),
+        KING(13),
+        ACE(14);
 
         static final Rank[] ranks = Rank.values();
+        private final int rankValue;
+
+        Rank(int value) {
+            this.rankValue = value;
+        }
+
+        public int getRankValue() {
+            return rankValue;
+        }
+
         public static Rank getRank(int i) {
             return Rank.ranks[i];
         }
@@ -30,9 +65,11 @@ public class Card {
         this.rank = rank;
         this.suit = suit;
     }
+
     public Suit getSuit() {
         return suit;
     }
+
     public Rank getRank() {
         return rank;
     }

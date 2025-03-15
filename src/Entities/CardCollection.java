@@ -1,7 +1,6 @@
 package Entities;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class CardCollection {
@@ -18,10 +17,10 @@ public class CardCollection {
         Random rand = new Random();
 
         // start from last element, dont need to use on first element
-        for (int i = cards.size()-1; i > 0; i--) {
+        for (int i = cards.size() - 1; i > 0; i--) {
 
             // pick random index from 0 to i
-            int index = rand.nextInt(i+1);
+            int index = rand.nextInt(i + 1);
 
             // swap i with randomly chosen element
             Card temp = cards.get(i);
