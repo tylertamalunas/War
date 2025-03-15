@@ -1,6 +1,7 @@
 package Entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class CardCollection {
@@ -13,6 +14,7 @@ public class CardCollection {
     // sort the cards in the Deck/Hand into a random order using the Fisher-Yates shuffle algorithm.
     // Linear Time, but this is dealing with small lists, so it works best.
     public void shuffleCards() {
+        System.out.println("Shuffling....");
         Random rand = new Random();
 
         // start from last element, dont need to use on first element

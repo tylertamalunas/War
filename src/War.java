@@ -9,9 +9,7 @@ public class War {
     public void startGame() {
         // create the deck and shuffle
         Deck deck = new Deck();
-        System.out.println(deck.toString());
         deck.shuffleCards();
-        System.out.println(deck.toString());
 
         // create the hands and discard piles
         Hand hand1 = new Hand();
@@ -31,5 +29,6 @@ public class War {
         System.out.println(hand1.toString());
         System.out.println("\nPlayer 2");
         System.out.println(hand2.toString());
+        System.out.println(discardPile2.toString());
     }
 }
