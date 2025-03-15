@@ -28,6 +28,7 @@ public class Deck extends CardCollection{
     }
 
     // only happens at game start, shuffles deck, and splits deck in half to give to players hands
+    // currently hardcoded for only 2 players
     public void deal(Hand player1Hand, Hand player2Hand) {
 
 
