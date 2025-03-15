@@ -29,6 +29,5 @@ public class War {
         System.out.println(hand1.toString());
         System.out.println("\nPlayer 2");
         System.out.println(hand2.toString());
-        System.out.println(discardPile2.toString());
     }
 }
