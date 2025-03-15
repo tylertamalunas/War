@@ -10,7 +10,6 @@ public class Deck extends CardCollection{
     public Deck() {
         super();
         buildDeck();
-        System.out.println("Deck Created: " + cards.toString());
     }
 
     // fill in deck with card values and suits
