@@ -71,10 +71,18 @@ public class War {
         int index = 2;
         while (true) {
             if (player1Hand.getCards().size() < index + 1) {
+                System.out.println("war");
                 System.out.println("Player 1 ran out of cards and lost the game...Player 2 WINS!!!");
+                for (int i = 0; i < player1Hand.getCards().size(); i++) {
+                    player1Hand.removeCard();
+                }
                 return;
             } else if (player2Hand.getCards().size() < index + 1) {
+                System.out.println("war");
                 System.out.println("Player 2 ran out of cards and lost the game...Player 1 WINS!!!");
+                for (int i = 0; i < player2Hand.getCards().size(); i++) {
+                    player2Hand.removeCard();
+                }
                 return;
             } else if (player1Hand.getCards().get(index).getRank().getRankValue() > player2Hand.getCards().get(index).getRank().getRankValue()) {
                 System.out.println("Player 1 won that War!\n");
