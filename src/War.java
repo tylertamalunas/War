@@ -19,8 +19,7 @@ public class War {
 
         // split the cards into two hands
         deck.deal(player1Hand, player2Hand);
-        boolean gameNotOver = true;
-        while (gameNotOver) {
+        while (true) {
             if (player1Hand.getCards().isEmpty()) {
                 System.out.println("Player 1 ran out of cards and lost the game...Player 2 WINS!!!");
                 break;
@@ -68,20 +67,21 @@ public class War {
     }
 
     // method to handle tiebreakers
-    private boolean  goToWar(Hand player1Hand, Hand player2Hand) {
-        boolean gameNotOver = true;
+    private void goToWar(Hand player1Hand, Hand player2Hand) {
         int index = 2;
-        while (gameNotOver == true) {
+        while (true) {
             if (player1Hand.getCards().size() < index + 1) {
-                System.out.println("war");
-                System.out.println("Player 1 ran out of cards and lost the game...Player 2 WINS!!!");
-                gameNotOver = false;
-                break;
+                // remove all cards from player1 since they dont have enough and will lose. Need to trigger win in outer loop.
+                while (player1Hand.getCards().size() > 0) {
+                    player1Hand.removeCard();
+                }
+                return;
             } else if (player2Hand.getCards().size() < index + 1) {
-                System.out.println("war");
-                System.out.println("Player 2 ran out of cards and lost the game...Player 1 WINS!!!");
-                gameNotOver = false;
-                break;
+                // remove all cards from player2 since they dont have enough and will lose. Need to trigger win in outer loop.
+                while (player2Hand.getCards().size() > 0) {
+                    player2Hand.removeCard();
+                }
+                return;
             } else if (player1Hand.getCards().get(index).getRank().getRankValue() > player2Hand.getCards().get(index).getRank().getRankValue()) {
                 System.out.println("Player 1 won that War!\n");
 
@@ -107,7 +107,6 @@ public class War {
                 index += 2;
             }
         }
-        return gameNotOver;
     }
 }
 
